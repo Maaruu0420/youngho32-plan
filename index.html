@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>永和32 - 2026年5月社群行銷規劃</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ============ RESET & BASE ============ */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --deep-teal: #2C5F5D;
+            --mid-teal: #4A8B87;
+            --soft-sage: #A8C5BD;
+            --mist-green: #E8F0EC;
+            --cream: #F6F1E7;
+            --warm-gold: #D4A24C;
+            --ink: #1C2A28;
+            --paper: #FAF8F3;
+        }
+
+        body {
+            background-color: #3a4a48;
+            font-family: 'Noto Sans TC', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        @media print {
+            body { background-color: white; padding: 0; gap: 0; display: block; }
+            .slide-container { margin: 0; box-shadow: none; width: 100% !important; height: 100vh !important; page-break-after: always !important; break-after: page !important; border: none; overflow: hidden; }
+            .slide-container:last-child { page-break-after: auto !important; break-after: auto !important; }
+            .guide-slide {
+                overflow: hidden !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            .guide-slide .section-head { padding: 24px 60px 4px !important; }
+            .guide-slide .section-index { font-size: 48px !important; }
+            .guide-slide .section-title { font-size: 22px !important; }
+            .guide-body {
+                padding: 8px 50px 20px !important;
+                gap: 8px !important;
+                flex: 1 !important;
+                align-content: start !important;
+                grid-template-rows: repeat(3, 1fr) !important;
+            }
+            .guide-card { padding: 10px 16px !important; border-radius: 10px !important; }
+            .guide-card .gc-head { margin-bottom: 6px !important; gap: 10px !important; }
+            .guide-card .gc-num { font-size: 24px !important; }
+            .guide-card h4 { font-size: 13px !important; line-height: 1.2 !important; }
+            .guide-card p { font-size: 11px !important; line-height: 1.45 !important; }
+        }
+
+        .slide-container {
+            width: 1123px;
+            height: 794px;
+            background-color: var(--paper);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Noto Sans TC', 'Roboto', sans-serif; font-weight: 700; }
+        p, li { font-family: 'Noto Sans TC', 'Roboto', sans-serif; font-weight: 400; line-height: 1.7; }
+        .serif-en { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+        /* ============ COVER ============ */
+        .cover-slide {
+            background: linear-gradient(135deg, var(--deep-teal) 0%, #1C4340 60%, var(--ink) 100%);
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+            position: relative;
+        }
+        .cover-slide::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(168,197,189,0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(212,162,76,0.12) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .cover-left {
+            flex: 1.3;
+            padding: 80px 60px 80px 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .cover-right {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .cover-right::before {
+            content: "MAY";
+            position: absolute;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 240px;
+            color: rgba(232,176,75,0.1);
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            line-height: 1;
+            letter-spacing: 0px;
+            white-space: nowrap;
+        }
+        .cover-droplet {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .cover-droplet .droplet-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 220px;
+            color: var(--warm-gold);
+            line-height: 1;
+            font-style: italic;
+            font-weight: 600;
+        }
+        .cover-droplet .droplet-label {
+            font-size: 20px;
+            letter-spacing: 8px;
+            color: var(--soft-sage);
+            margin-top: 10px;
+        }
+        .cover-eyebrow {
+            font-size: 14px;
+            letter-spacing: 6px;
+            color: var(--warm-gold);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .cover-slide h1 {
+            font-size: 72px;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        .cover-slide .title-accent {
+            color: var(--warm-gold);
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 82px;
+        }
+        .cover-subtitle {
+            font-size: 18px;
+            color: var(--soft-sage);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 460px;
+            font-weight: 300;
+        }
+        .cover-meta {
+            display: flex;
+            gap: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(168,197,189,0.3);
+            max-width: 460px;
+        }
+        .cover-meta-item .label { font-size: 11px; letter-spacing: 3px; color: var(--warm-gold); margin-bottom: 6px; }
+        .cover-meta-item .value { font-size: 16px; color: #fff; font-weight: 500; }
+        .cover-brand {
+            position: absolute;
+            bottom: 40px;
+            left: 100px;
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: rgba(255,255,255,0.5);
+            z-index: 3;
+        }
+
+        /* ============ GENERIC SECTION ============ */
+        .section-head {
+            padding: 60px 80px 20px;
+            display: flex;
+            align-items: baseline;
+            gap: 24px;
+        }
+        .section-index {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 72px;
+            color: var(--warm-gold);
+            font-weight: 600;
+            line-height: 1;
+        }
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 5px;
+            color: var(--mid-teal);
+            margin-bottom: 4px;
+        }
+        .section-title {
+            font-size: 32px;
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        /* ============ TIME PLANNING (Slide 2) ============ */
+        .time-slide {
+            background: var(--paper);
+            color: var(--ink);
+            padding: 0;
+        }
+        .time-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px 80px 80px;
+            flex: 1;
+        }
+        .time-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(44,95,93,0.08);
+            border-left: 4px solid var(--warm-gold);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .time-card .icon-wrap {
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: var(--mist-green);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+        .time-card h3 {
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: var(--mid-teal);
+            margin-bottom: 12px;
+        }
+        .time-card .big-text {
+            font-size: 32px;
+            color: var(--ink);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .time-card .detail {
+            font-size: 16px;
+            color: #5a6b69;
+            line-height: 1.8;
+        }
+        .time-card .pill-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+        .pill {
+            background: var(--mist-green);
+            color: var(--deep-teal);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .pill.gold { background: rgba(212,162,76,0.15); color: #a17a2e; }
+
+        /* ============ TOPICS OVERVIEW (Slide 3) ============ */
+        .topics-slide {
+            background: linear-gradient(180deg, #F6F1E7 0%, #EDE4D0 100%);
+            color: var(--ink);
+        }
+        .topics-intro {
+            padding: 20px 80px 30px;
+            font-size: 18px;
+            color: #5a6b69;
+            line-height: 1.8;
+            max-width: 800px;
+        }
+        .topics-intro strong { color: var(--deep-teal); font-weight: 700; }
+        .topics-grid {
+            padding: 0 80px 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            flex: 1;
+        }
+        .topic-block {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(28,42,40,0.06);
+            transition: transform 0.3s;
+        }
+        .topic-block::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: var(--warm-gold);
+        }
+        .topic-week {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 16px;
+            color: var(--mid-teal);
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        .topic-name {
+            font-size: 22px;
+            color: var(--ink);
+            font-weight: 700;
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+        .topic-emoji {
+            font-size: 42px;
+            margin-bottom: 18px;
+            line-height: 1;
+        }
+        .topic-tag {
+            font-size: 12px;
+            color: var(--deep-teal);
+            background: var(--mist-green);
+            padding: 6px 12px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-top: auto;
+            align-self: flex-start;
+            font-weight: 500;
+        }
+
+        /* ============ CONTENT SLIDE (Weekly) ============ */
+        .week-slide {
+            display: flex;
+            flex-direction: row;
+            background: #fff;
+        }
+        .week-left {
+            flex: 1;
+            background: var(--mist-green);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+        }
+        .week-visual {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            background: linear-gradient(135deg, var(--deep-teal) 0%, var(--mid-teal) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 40px;
+            color: #fff;
+            box-shadow: 0 20px 40px rgba(44,95,93,0.2);
+        }
+        .week-visual::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 70% 20%, rgba(232,176,75,0.3) 0%, transparent 40%),
+                radial-gradient(circle at 30% 80%, rgba(168,197,189,0.2) 0%, transparent 40%);
+        }
+        .week-visual-label {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: rgba(255,255,255,0.7);
+        }
+        .week-visual-big {
+            position: relative;
+            z-index: 2;
+        }
+        .week-visual-big .en {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 38px;
+            color: var(--warm-gold);
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .week-visual-big .cn {
+            font-size: 46px;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: 2px;
+        }
+        .week-visual-icon {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 72px;
+            opacity: 0.9;
+            z-index: 2;
+        }
+        .week-right {
+            flex: 1;
+            padding: 70px 70px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--paper);
+        }
+        .week-badge {
+            display: inline-block;
+            background: var(--warm-gold);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+        .week-eyebrow {
+            font-size: 14px;
+            color: var(--mid-teal);
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .week-right h2 {
+            font-size: 30px;
+            color: var(--ink);
+            margin-bottom: 24px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        .week-right .quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 20px;
+            color: var(--deep-teal);
+            border-left: 3px solid var(--warm-gold);
+            padding-left: 18px;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+        .week-right .body-text {
+            font-size: 15px;
+            color: #3d4d4b;
+            line-height: 1.9;
+            margin-bottom: 24px;
+        }
+        .week-keywords {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .keyword {
+            font-size: 13px;
+            color: var(--deep-teal);
+            background: var(--mist-green);
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-weight: 500;
+        }
+
+        /* ============ CALENDAR ============ */
+        .calendar-slide {
+            background: #fff;
+            color: var(--ink);
+            padding: 50px 70px;
+        }
+        .cal-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--ink);
+        }
+        .cal-top-left .cal-kicker {
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: var(--mid-teal);
+            margin-bottom: 8px;
+        }
+        .cal-top-left h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 68px;
+            color: var(--ink);
+            font-weight: 600;
+            line-height: 1;
+        }
+        .cal-top-right {
+            text-align: right;
+        }
+        .cal-legend {
+            display: flex;
+            gap: 14px;
+            margin-top: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #5a6b69;
+        }
+        .legend-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+        }
+        .dot-teal { background: var(--deep-teal); }
+        .dot-gold { background: var(--warm-gold); }
+        .dot-red { background: #c0504d; }
+
+        .cal-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: 34px repeat(6, 1fr);
+            flex-grow: 1;
+            gap: 6px;
+        }
+        .dow {
+            background: transparent;
+            color: var(--mid-teal);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 12px;
+            letter-spacing: 3px;
+        }
+        .day-cell {
+            background: var(--paper);
+            border-radius: 10px;
+            padding: 8px 10px;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            position: relative;
+        }
+        .day-cell.empty { background: transparent; }
+        .day-cell.weekend { background: var(--mist-green); }
+        .day-cell.post-day { background: linear-gradient(135deg, rgba(44,95,93,0.08) 0%, rgba(232,176,75,0.12) 100%); border: 1.5px solid var(--warm-gold); }
+        .day-cell.holiday { background: #fce8e6; }
+        .day-num {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--ink);
+        }
+        .day-note {
+            font-size: 10px;
+            color: var(--deep-teal);
+            margin-top: 4px;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+        .day-note.gold { color: #a17a2e; }
+        .day-note.red { color: #9a2f2c; }
+        .day-post-tag {
+            margin-top: auto;
+            font-size: 10px;
+            font-weight: 600;
+            color: #fff;
+            background: var(--deep-teal);
+            padding: 3px 6px;
+            border-radius: 6px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        /* ============ GUIDE ============ */
+        .guide-slide {
+            background: linear-gradient(135deg, var(--ink) 0%, #0f1a19 100%);
+            color: #fff;
+            padding: 0;
+            position: relative;
+        }
+        .guide-slide::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 85% 15%, rgba(212,162,76,0.15) 0%, transparent 45%),
+                radial-gradient(circle at 15% 85%, rgba(74,139,135,0.15) 0%, transparent 45%);
+        }
+        .guide-slide .section-head {
+            position: relative; z-index: 2;
+            padding: 50px 80px 10px;
+        }
+        .guide-slide .section-label { color: var(--warm-gold); }
+        .guide-slide .section-title { color: #fff; }
+        .guide-slide .section-index { color: var(--warm-gold); }
+        .guide-body {
+            padding: 20px 80px 60px;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        .guide-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(168,197,189,0.2);
+            border-radius: 16px;
+            padding: 22px 24px;
+            backdrop-filter: blur(10px);
+        }
+        .guide-card .gc-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+        .guide-card .gc-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 36px;
+            color: var(--warm-gold);
+            font-weight: 600;
+            line-height: 1;
+        }
+        .guide-card h4 {
+            font-size: 17px;
+            color: #fff;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .guide-card p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+        }
+        .guide-card p b { color: var(--warm-gold); font-weight: 600; }
+
+        /* ============ CLOSING ============ */
+        .closing-slide {
+            background: linear-gradient(135deg, var(--deep-teal) 0%, #1a3c3a 100%);
+            color: #fff;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .closing-slide::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 50% 30%, rgba(232,176,75,0.18) 0%, transparent 50%);
+        }
+        .closing-inner { position: relative; z-index: 2; }
+        .closing-slide .cs-kicker {
+            font-size: 13px;
+            letter-spacing: 6px;
+            color: var(--warm-gold);
+            margin-bottom: 30px;
+        }
+        .closing-slide .cs-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 72px;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+        .closing-slide .cs-sub {
+            font-size: 24px;
+            color: var(--soft-sage);
+            letter-spacing: 4px;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+        .closing-slide .cs-brand {
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: rgba(255,255,255,0.5);
+            padding-top: 30px;
+            border-top: 1px solid rgba(168,197,189,0.3);
+            display: inline-block;
+            min-width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ Slide 1: Cover ============ -->
+    <div class="slide-container cover-slide">
+        <div class="cover-left">
+            <div class="cover-eyebrow">SOCIAL · MEDIA · PLANNING</div>
+            <h1>五月<span class="title-accent">·</span><br>濕氣退散<br><span class="title-accent">Reset·Season</span></h1>
+            <p class="cover-subtitle">梅雨來臨前的身體整備：清空疲累沈重感，<br>為濕氣纏身的季節，預先打開體內流動的餘裕。</p>
+            <div class="cover-meta">
+                <div class="cover-meta-item">
+                    <div class="label">MONTH</div>
+                    <div class="value">2026 . 05</div>
+                </div>
+                <div class="cover-meta-item">
+                    <div class="label">FREQUENCY</div>
+                    <div class="value">每週 1 則</div>
+                </div>
+                <div class="cover-meta-item">
+                    <div class="label">POSTS</div>
+                    <div class="value">共 4 篇</div>
+                </div>
+            </div>
+        </div>
+        <div class="cover-right">
+            <div class="cover-droplet">
+                <div class="droplet-num">05</div>
+                <div class="droplet-label">M A Y · 2 0 2 6</div>
+            </div>
+        </div>
+        <div class="cover-brand">永和三二 · YONGHE32 · 運動按摩會館</div>
+    </div>
+
+    <!-- ============ Slide 2: Time Planning ============ -->
+    <div class="slide-container time-slide">
+        <div class="section-head">
+            <div class="section-index">01</div>
+            <div>
+                <div class="section-label">T I M E · P L A N N I N G</div>
+                <div class="section-title">發文頻率與時段規劃</div>
+            </div>
+        </div>
+        <div class="time-body">
+            <div class="time-card">
+                <div class="icon-wrap">🗓️</div>
+                <h3>P O S T · R H Y T H M</h3>
+                <div class="big-text">每週 1 則貼文</div>
+                <p class="detail">五月共規劃 <b>4 篇主題貼文</b>，母親節（5/10）話題融入 Week 1 貼文中，維持穩定曝光節奏。</p>
+                <div class="pill-row">
+                    <span class="pill">主題貼文 x4</span>
+                    <span class="pill gold">母親節融入 W1</span>
+                </div>
+            </div>
+            <div class="time-card">
+                <div class="icon-wrap">⏰</div>
+                <h3>B E S T · T I M I N G</h3>
+                <div class="big-text">週一 ～ 週四</div>
+                <p class="detail">平日午休與下班前後為上班族滑動社群的高峰時段。</p>
+                <div class="pill-row">
+                    <span class="pill gold">12:00 - 13:00</span>
+                    <span class="pill gold">18:00 - 19:30</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ Slide 3: Topics Overview ============ -->
+    <div class="slide-container topics-slide">
+        <div class="section-head">
+            <div class="section-index">02</div>
+            <div>
+                <div class="section-label">M O N T H L Y · T H E M E</div>
+                <div class="section-title">主題脈絡：濕氣退散・身體換季</div>
+            </div>
+        </div>
+        <p class="topics-intro">五月梅雨漸臨，身體也會跟著變「鈍」——早晨起床沈重、肩頸僵緊、雙腿水腫感揮之不去。本月圍繞<strong>清空沈重・重啟流動</strong>為主軸，從水氣循環、睡眠品質、節氣轉換三種角度，引導讀者建立「濕季換季」的保養意識。</p>
+        <div class="topics-grid">
+            <div class="topic-block">
+                <div class="topic-week">W E E K · 0 1</div>
+                <div class="topic-emoji">🌧️</div>
+                <div class="topic-name">換季沈重感<br>Reset</div>
+                <span class="topic-tag">＃疲勞重啟</span>
+            </div>
+            <div class="topic-block">
+                <div class="topic-week">W E E K · 0 2</div>
+                <div class="topic-emoji">💧</div>
+                <div class="topic-name">循環流動力<br>Flow</div>
+                <span class="topic-tag">＃腿部輕盈</span>
+            </div>
+            <div class="topic-block">
+                <div class="topic-week">W E E K · 0 3</div>
+                <div class="topic-emoji">🌙</div>
+                <div class="topic-name">深眠修復力<br>Rest</div>
+                <span class="topic-tag">＃好眠保養</span>
+            </div>
+            <div class="topic-block">
+                <div class="topic-week">W E E K · 0 4</div>
+                <div class="topic-emoji">🌿</div>
+                <div class="topic-name">換季精油時光<br>Ritual</div>
+                <span class="topic-tag">＃儀式感放鬆</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ Slide 4: Week 1 ============ -->
+    <div class="slide-container week-slide">
+        <div class="week-left">
+            <div class="week-visual">
+                <div class="week-visual-label">W E E K · 0 1 &nbsp;/&nbsp; M A Y</div>
+                <div class="week-visual-icon">🌧️</div>
+                <div class="week-visual-big">
+                    <div class="en">Reset the heaviness</div>
+                    <div class="cn">清空<br>沈重感</div>
+                </div>
+            </div>
+        </div>
+        <div class="week-right">
+            <span class="week-badge">WEEK 01 &nbsp;·&nbsp; 5/4 – 5/10</span>
+            <div class="week-eyebrow">主 題 核 心</div>
+            <h2>梅雨未到，身體先沈一步了嗎？</h2>
+            <div class="quote">濕氣上身前，先讓肌肉把<br>前一季的疲勞負擔卸下。</div>
+            <p class="body-text">切入點從「起床覺得身體比天氣還沈」的生活情境開始，引導讀者覺察：這不是天氣的錯，是身體還卡著四月的累。用「清空」的意象取代動作教學，搭配母親節前的身體保養話題。</p>
+            <div class="week-keywords">
+                <span class="keyword">＃沈重感</span>
+                <span class="keyword">＃疲勞重啟</span>
+                <span class="keyword">＃身體換季</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ Slide 5: Week 2 ============ -->
+    <div class="slide-container week-slide">
+        <div class="week-left">
+            <div class="week-visual">
+                <div class="week-visual-label">W E E K · 0 2 &nbsp;/&nbsp; M A Y</div>
+                <div class="week-visual-icon">💧</div>
+                <div class="week-visual-big">
+                    <div class="en">Flow returns lightness</div>
+                    <div class="cn">讓雙腿<br>重新流動</div>
+                </div>
+            </div>
+        </div>
+        <div class="week-right">
+            <span class="week-badge">WEEK 02 &nbsp;·&nbsp; 5/11 – 5/17</span>
+            <div class="week-eyebrow">主 題 核 心</div>
+            <h2>久坐一天，雙腿像灌了水泥？</h2>
+            <div class="quote">循環卡住，連走路的節奏<br>都會跟著變鈍。</div>
+            <p class="body-text">針對辦公族、久坐族下肢容易水腫與緊繃鎖住的狀態，用「流動」與「輕盈」的意象，描繪調理後雙腿重新有動能的感受。呼應梅雨季節濕氣囤積的體感話題。</p>
+            <div class="week-keywords">
+                <span class="keyword">＃下肢循環</span>
+                <span class="keyword">＃輕盈感</span>
+                <span class="keyword">＃久坐保養</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ Slide 6: Week 3 ============ -->
+    <div class="slide-container week-slide">
+        <div class="week-left">
+            <div class="week-visual">
+                <div class="week-visual-label">W E E K · 0 3 &nbsp;/&nbsp; M A Y</div>
+                <div class="week-visual-icon">🌙</div>
+                <div class="week-visual-big">
+                    <div class="en">Rest, the deep kind</div>
+                    <div class="cn">為深眠<br>做準備</div>
+                </div>
+            </div>
+        </div>
+        <div class="week-right">
+            <span class="week-badge">WEEK 03 &nbsp;·&nbsp; 5/18 – 5/24</span>
+            <div class="week-eyebrow">主 題 核 心</div>
+            <h2>睡了 7 小時，為什麼還是累？</h2>
+            <div class="quote">肌肉沒放鬆，睡眠也只是<br>身體的表面待機。</div>
+            <p class="body-text">從「睡再久還是累」的現代人通病切入，連結肌肉緊繃鎖住造成的睡眠品質問題。強調調理後的深層放鬆，能讓入眠更快、醒來更有餘裕——呼應潮濕季節睡眠容易變差的生活共感。</p>
+            <div class="week-keywords">
+                <span class="keyword">＃深層放鬆</span>
+                <span class="keyword">＃好眠保養</span>
+                <span class="keyword">＃疲勞清空</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ Slide 7: Week 4 ============ -->
+    <div class="slide-container week-slide">
+        <div class="week-left">
+            <div class="week-visual">
+                <div class="week-visual-label">W E E K · 0 4 &nbsp;/&nbsp; M A Y</div>
+                <div class="week-visual-icon">🌿</div>
+                <div class="week-visual-big">
+                    <div class="en">A ritual for the season</div>
+                    <div class="cn">精油時光<br>換季儀式</div>
+                </div>
+            </div>
+        </div>
+        <div class="week-right">
+            <span class="week-badge">WEEK 04 &nbsp;·&nbsp; 5/25 – 5/31</span>
+            <div class="week-eyebrow">主 題 核 心</div>
+            <h2>給自己一場換季的儀式感</h2>
+            <div class="quote">讓香氣帶著身體，<br>慢慢從四月走進五月。</div>
+            <p class="body-text">月末導流至「<b>精油按摩</b>」服務（此項目僅提供男性預約），結合換季儀式感與犒賞自己的話題。同時提醒女性會員：運動調理與全身基礎按摩皆可一同預約，讓每位讀者都能在梅雨季為自己準備一段放鬆時光。</p>
+            <div class="week-keywords">
+                <span class="keyword">＃精油按摩</span>
+                <span class="keyword">＃換季儀式</span>
+                <span class="keyword">＃深層放鬆</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ Slide 8: Calendar ============ -->
+    <div class="slide-container calendar-slide">
+        <div class="cal-top">
+            <div class="cal-top-left">
+                <div class="cal-kicker">0 3 &nbsp;·&nbsp; S C H E D U L E</div>
+                <h2>May · 2026</h2>
+            </div>
+            <div class="cal-top-right">
+                <div style="font-size:13px; color:#5a6b69; letter-spacing:2px;">五月排程規劃</div>
+                <div class="cal-legend">
+                    <span class="legend-item"><span class="legend-dot dot-teal"></span>主題貼文</span>
+                    <span class="legend-item"><span class="legend-dot dot-gold"></span>節慶檔期</span>
+                    <span class="legend-item"><span class="legend-dot dot-red"></span>國定假日</span>
+                </div>
+            </div>
+        </div>
+        <div class="cal-grid">
+            <div class="dow">SUN</div><div class="dow">MON</div><div class="dow">TUE</div><div class="dow">WED</div><div class="dow">THU</div><div class="dow">FRI</div><div class="dow">SAT</div>
+
+            <!-- Week 1: May 1 (Fri) start -->
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell holiday"><span class="day-num">1</span><span class="day-note red">勞動節</span></div>
+            <div class="day-cell weekend"><span class="day-num">2</span></div>
+
+            <div class="day-cell weekend"><span class="day-num">3</span></div>
+            <div class="day-cell post-day"><span class="day-num">4</span><span class="day-note">清空沈重感</span><span class="day-post-tag">POST 01</span></div>
+            <div class="day-cell"><span class="day-num">5</span></div>
+            <div class="day-cell"><span class="day-num">6</span></div>
+            <div class="day-cell"><span class="day-num">7</span></div>
+            <div class="day-cell"><span class="day-num">8</span></div>
+            <div class="day-cell weekend"><span class="day-num">9</span></div>
+
+            <div class="day-cell weekend"><span class="day-num">10</span><span class="day-note gold">母親節</span></div>
+            <div class="day-cell post-day"><span class="day-num">11</span><span class="day-note">循環流動</span><span class="day-post-tag">POST 02</span></div>
+            <div class="day-cell"><span class="day-num">12</span></div>
+            <div class="day-cell"><span class="day-num">13</span></div>
+            <div class="day-cell"><span class="day-num">14</span></div>
+            <div class="day-cell"><span class="day-num">15</span></div>
+            <div class="day-cell weekend"><span class="day-num">16</span></div>
+
+            <div class="day-cell weekend"><span class="day-num">17</span></div>
+            <div class="day-cell post-day"><span class="day-num">18</span><span class="day-note">深眠修復</span><span class="day-post-tag">POST 03</span></div>
+            <div class="day-cell"><span class="day-num">19</span></div>
+            <div class="day-cell"><span class="day-num">20</span></div>
+            <div class="day-cell"><span class="day-num">21</span></div>
+            <div class="day-cell"><span class="day-num">22</span></div>
+            <div class="day-cell weekend"><span class="day-num">23</span></div>
+
+            <div class="day-cell weekend"><span class="day-num">24</span></div>
+            <div class="day-cell post-day"><span class="day-num">25</span><span class="day-note">精油時光</span><span class="day-post-tag">POST 04</span></div>
+            <div class="day-cell"><span class="day-num">26</span></div>
+            <div class="day-cell"><span class="day-num">27</span></div>
+            <div class="day-cell"><span class="day-num">28</span></div>
+            <div class="day-cell"><span class="day-num">29</span></div>
+            <div class="day-cell weekend"><span class="day-num">30</span></div>
+
+            <div class="day-cell weekend"><span class="day-num">31</span></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+        </div>
+    </div>
+
+    <!-- ============ Slide 9: Guide ============ -->
+    <div class="slide-container guide-slide">
+        <div class="section-head">
+            <div class="section-index">04</div>
+            <div>
+                <div class="section-label">W R I T I N G · G U I D E</div>
+                <div class="section-title">5 月 文 案 撰 寫 重 點</div>
+            </div>
+        </div>
+        <div class="guide-body">
+            <div class="guide-card">
+                <div class="gc-head">
+                    <div class="gc-num">01</div>
+                    <h4>從「節氣體感」切入</h4>
+                </div>
+                <p>五月是<b>梅雨前哨</b>，用「身體比天氣還先感到濕氣」「起床像沒充到電」等<b>生活共感</b>開場，比直接談按摩更能引發共鳴。</p>
+            </div>
+            <div class="guide-card">
+                <div class="gc-head">
+                    <div class="gc-num">02</div>
+                    <h4>母親節 · 反向敘事</h4>
+                </div>
+                <p>跳脫「送媽媽禮物」的紅海，改切<b>「照顧別人前，先把自己照顧好」</b>，讓所有身份（媽媽、爸爸、子女）都能把按摩視為<b>給自己的禮物</b>。</p>
+            </div>
+            <div class="guide-card">
+                <div class="gc-head">
+                    <div class="gc-num">03</div>
+                    <h4>意象詞彙 · 升級</h4>
+                </div>
+                <p>本月主推字彙：<b>清空、流動、沈降、餘裕、通透、重啟</b>。避免再用「回彈力、Ｑ彈」等 4 月主打詞，保持品牌語彙<b>月月有新鮮感</b>。</p>
+            </div>
+            <div class="guide-card">
+                <div class="gc-head">
+                    <div class="gc-num">04</div>
+                    <h4>Week 4 · 精油服務說明</h4>
+                </div>
+                <p>精油按摩為<b>男性限定項目</b>，文案需清楚標註此服務適用對象；同步邀請女性讀者選擇<b>運動調理 / 全身基礎按摩</b>，避免女性受眾感到被排除。</p>
+            </div>
+            <div class="guide-card">
+                <div class="gc-head">
+                    <div class="gc-num">05</div>
+                    <h4>避詞守則 · 持續執行</h4>
+                </div>
+                <p>不用「痠痛、治療、沾黏、復健、損傷、發炎」。改說：<b>卡住感、清空雜訊、梳理糾結、撥開沈重、重啟流動</b>。</p>
+            </div>
+            <div class="guide-card">
+                <div class="gc-head">
+                    <div class="gc-num">06</div>
+                    <h4>本月主打活動 · 待確認</h4>
+                </div>
+                <p style="color: rgba(255,255,255,0.5); font-style: italic;">＊ 待確認</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ Slide 10: Closing ============ -->
+    <div class="slide-container closing-slide">
+        <div class="closing-inner">
+            <div class="cs-kicker">M A Y &nbsp;·&nbsp; 2 0 2 6</div>
+            <div class="cs-main">Reset,<br>before the rain arrives.</div>
+            <div class="cs-sub">濕 氣 退 散 &nbsp;·&nbsp; 身 體 換 季</div>
+            <div class="cs-brand">YONGHE 32 &nbsp;·&nbsp; 永 和 三 二</div>
+        </div>
+    </div>
+
+</body>
+</html>

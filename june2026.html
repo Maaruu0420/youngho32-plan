@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>永和32 - 2026年6月社群行銷規劃</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ============ RESET & BASE ============ */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --deep-teal: #2C5F5D;
+            --mid-teal: #4A8B87;
+            --soft-sage: #A8C5BD;
+            --mist-green: #E8F0EC;
+            --cream: #F6F1E7;
+            --warm-gold: #D4A24C;
+            --ink: #1C2A28;
+            --paper: #FAF8F3;
+        }
+
+        html, body { width: 100%; overflow-x: hidden; }
+
+        body {
+            background-color: #3a4a48;
+            font-family: 'Noto Sans TC', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        @media print {
+            body { background-color: white; padding: 0; gap: 0; display: block; }
+            .slide-wrapper { width: 100% !important; height: 100vh !important; margin: 0 !important; }
+            .slide-container {
+                margin: 0;
+                box-shadow: none;
+                width: 1123px !important;
+                height: 794px !important;
+                page-break-after: always !important;
+                break-after: page !important;
+                border: none;
+                overflow: hidden;
+                transform: none !important;
+            }
+            .slide-container:last-child { page-break-after: auto !important; break-after: auto !important; }
+            .guide-slide {
+                overflow: hidden !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            .guide-slide .section-head { padding: 24px 60px 4px !important; }
+            .guide-slide .section-index { font-size: 48px !important; }
+            .guide-slide .section-title { font-size: 22px !important; }
+            .guide-body {
+                padding: 8px 50px 20px !important;
+                gap: 8px !important;
+                flex: 1 !important;
+                align-content: start !important;
+                grid-template-rows: repeat(3, 1fr) !important;
+            }
+            .guide-card { padding: 10px 16px !important; border-radius: 10px !important; }
+            .guide-card .gc-head { margin-bottom: 6px !important; gap: 10px !important; }
+            .guide-card .gc-num { font-size: 24px !important; }
+            .guide-card h4 { font-size: 13px !important; line-height: 1.2 !important; }
+            .guide-card p { font-size: 11px !important; line-height: 1.45 !important; }
+        }
+
+        /* ============ RWD WRAPPER (等比例縮放) ============ */
+        .slide-wrapper {
+            width: min(1123px, 95vw);
+            position: relative;
+        }
+        .slide-wrapper::before {
+            content: "";
+            display: block;
+            padding-top: 70.7%; /* 794/1123 維持比例 */
+        }
+        .slide-container {
+            width: 1123px;
+            height: 794px;
+            background-color: var(--paper);
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transform-origin: top left;
+            transform: scale(calc(min(1123px, 95vw) / 1123px));
+        }
+
+        h1, h2, h3, h4 { font-family: 'Noto Sans TC', 'Roboto', sans-serif; font-weight: 700; }
+        p, li { font-family: 'Noto Sans TC', 'Roboto', sans-serif; font-weight: 400; line-height: 1.7; }
+        .serif-en { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+        /* ============ COVER ============ */
+        .cover-slide {
+            background: linear-gradient(135deg, var(--deep-teal) 0%, #1C4340 60%, var(--ink) 100%);
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+            position: absolute;
+        }
+        .cover-slide::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(168,197,189,0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(212,162,76,0.12) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .cover-left {
+            flex: 1.3;
+            padding: 80px 60px 80px 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .cover-right {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .cover-right::before {
+            content: "JUNE";
+            position: absolute;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 240px;
+            color: rgba(232,176,75,0.1);
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            line-height: 1;
+            letter-spacing: 0px;
+            white-space: nowrap;
+        }
+        .cover-droplet {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .cover-droplet .droplet-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 220px;
+            color: var(--warm-gold);
+            line-height: 1;
+            font-style: italic;
+            font-weight: 600;
+        }
+        .cover-droplet .droplet-label {
+            font-size: 20px;
+            letter-spacing: 8px;
+            color: var(--soft-sage);
+            margin-top: 10px;
+        }
+        .cover-eyebrow {
+            font-size: 14px;
+            letter-spacing: 6px;
+            color: var(--warm-gold);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .cover-slide h1 {
+            font-size: 72px;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        .cover-slide .title-accent {
+            color: var(--warm-gold);
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 82px;
+        }
+        .cover-subtitle {
+            font-size: 18px;
+            color: var(--soft-sage);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 460px;
+            font-weight: 300;
+        }
+        .cover-meta {
+            display: flex;
+            gap: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(168,197,189,0.3);
+            max-width: 460px;
+        }
+        .cover-meta-item .label { font-size: 11px; letter-spacing: 3px; color: var(--warm-gold); margin-bottom: 6px; }
+        .cover-meta-item .value { font-size: 16px; color: #fff; font-weight: 500; }
+        .cover-brand {
+            position: absolute;
+            bottom: 40px;
+            left: 100px;
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: rgba(255,255,255,0.5);
+            z-index: 3;
+        }
+
+        /* ============ GENERIC SECTION ============ */
+        .section-head {
+            padding: 60px 80px 20px;
+            display: flex;
+            align-items: baseline;
+            gap: 24px;
+        }
+        .section-index {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 72px;
+            color: var(--warm-gold);
+            font-weight: 600;
+            line-height: 1;
+        }
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 5px;
+            color: var(--mid-teal);
+            margin-bottom: 4px;
+        }
+        .section-title {
+            font-size: 32px;
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        /* ============ TIME PLANNING (Slide 2) ============ */
+        .time-slide {
+            background: var(--paper);
+            color: var(--ink);
+            padding: 0;
+        }
+        .time-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px 80px 80px;
+            flex: 1;
+        }
+        .time-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(44,95,93,0.08);
+            border-left: 4px solid var(--warm-gold);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .time-card .icon-wrap {
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: var(--mist-green);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+        .time-card h3 {
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: var(--mid-teal);
+            margin-bottom: 12px;
+        }
+        .time-card .big-text {
+            font-size: 32px;
+            color: var(--ink);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .time-card .detail {
+            font-size: 16px;
+            color: #5a6b69;
+            line-height: 1.8;
+        }
+        .time-card .pill-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+        .pill {
+            background: var(--mist-green);
+            color: var(--deep-teal);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .pill.gold { background: rgba(212,162,76,0.15); color: #a17a2e; }
+
+        /* ============ TOPICS OVERVIEW (Slide 3) ============ */
+        .topics-slide {
+            background: linear-gradient(180deg, #F6F1E7 0%, #EDE4D0 100%);
+            color: var(--ink);
+        }
+        .topics-intro {
+            padding: 20px 80px 30px;
+            font-size: 18px;
+            color: #5a6b69;
+            line-height: 1.8;
+            max-width: 800px;
+        }
+        .topics-intro strong { color: var(--deep-teal); font-weight: 700; }
+        .topics-grid {
+            padding: 0 80px 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            flex: 1;
+        }
+        .topic-block {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(28,42,40,0.06);
+            transition: transform 0.3s;
+        }
+        .topic-block::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: var(--warm-gold);
+        }
+        .topic-week {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 16px;
+            color: var(--mid-teal);
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        .topic-name {
+            font-size: 22px;
+            color: var(--ink);
+            font-weight: 700;
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+        .topic-emoji {
+            font-size: 42px;
+            margin-bottom: 18px;
+            line-height: 1;
+        }
+        .topic-tag {
+            font-size: 12px;
+            color: var(--deep-teal);
+            background: var(--mist-green);
+            padding: 6px 12px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-top: auto;
+            align-self: flex-start;
+            font-weight: 500;
+        }
+
+        /* ============ CONTENT SLIDE (Weekly) ============ */
+        .week-slide {
+            display: flex;
+            flex-direction: row;
+            background: #fff;
+        }
+        .week-left {
+            flex: 1;
+            background: var(--mist-green);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+        }
+        .week-visual {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            background: linear-gradient(135deg, var(--deep-teal) 0%, var(--mid-teal) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 40px;
+            color: #fff;
+            box-shadow: 0 20px 40px rgba(44,95,93,0.2);
+        }
+        .week-visual::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 70% 20%, rgba(232,176,75,0.3) 0%, transparent 40%),
+                radial-gradient(circle at 30% 80%, rgba(168,197,189,0.2) 0%, transparent 40%);
+        }
+        .week-visual-label {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: rgba(255,255,255,0.7);
+        }
+        .week-visual-big {
+            position: relative;
+            z-index: 2;
+        }
+        .week-visual-big .en {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 38px;
+            color: var(--warm-gold);
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .week-visual-big .cn {
+            font-size: 46px;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: 2px;
+        }
+        .week-visual-icon {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 72px;
+            opacity: 0.9;
+            z-index: 2;
+        }
+        .week-right {
+            flex: 1;
+            padding: 70px 70px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--paper);
+        }
+        .week-badge {
+            display: inline-block;
+            background: var(--warm-gold);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+        .week-eyebrow {
+            font-size: 14px;
+            color: var(--mid-teal);
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .week-right h2 {
+            font-size: 30px;
+            color: var(--ink);
+            margin-bottom: 24px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        .week-right .quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 20px;
+            color: var(--deep-teal);
+            border-left: 3px solid var(--warm-gold);
+            padding-left: 18px;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+        .week-right .body-text {
+            font-size: 15px;
+            color: #3d4d4b;
+            line-height: 1.9;
+            margin-bottom: 24px;
+        }
+        .week-keywords {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .keyword {
+            font-size: 13px;
+            color: var(--deep-teal);
+            background: var(--mist-green);
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-weight: 500;
+        }
+
+        /* ============ CALENDAR ============ */
+        .calendar-slide {
+            background: #fff;
+            color: var(--ink);
+            padding: 50px 70px;
+        }
+        .cal-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--ink);
+        }
+        .cal-top-left .cal-kicker {
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: var(--mid-teal);
+            margin-bottom: 8px;
+        }
+        .cal-top-left h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 68px;
+            color: var(--ink);
+            font-weight: 600;
+            line-height: 1;
+        }
+        .cal-top-right {
+            text-align: right;
+        }
+        .cal-legend {
+            display: flex;
+            gap: 14px;
+            margin-top: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #5a6b69;
+        }
+        .legend-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+        }
+        .dot-teal { background: var(--deep-teal); }
+        .dot-gold { background: var(--warm-gold); }
+        .dot-red { background: #c0504d; }
+
+        .cal-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: 34px repeat(6, 1fr);
+            flex-grow: 1;
+            gap: 6px;
+        }
+        .dow {
+            background: transparent;
+            color: var(--mid-teal);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 12px;
+            letter-spacing: 3px;
+        }
+        .day-cell {
+            background: var(--paper);
+            border-radius: 10px;
+            padding: 8px 10px;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            position: relative;
+        }
+        .day-cell.empty { background: transparent; }
+        .day-cell.weekend { background: var(--mist-green); }
+        .day-cell.post-day { background: linear-gradient(135deg, rgba(44,95,93,0.08) 0%, rgba(232,176,75,0.12) 100%); border: 1.5px solid var(--warm-gold); }
+        .day-cell.holiday { background: #fce8e6; }
+        .day-num {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--ink);
+        }
+        .day-note {
+            font-size: 10px;
+            color: var(--deep-teal);
+            margin-top: 4px;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+        .day-note.gold { color: #a17a2e; }
+        .day-note.red { color: #9a2f2c; }
+        .day-post-tag {
+            margin-top: auto;
+            font-size: 10px;
+            font-weight: 600;
+            color: #fff;
+            background: var(--deep-teal);
+            padding: 3px 6px;
+            border-radius: 6px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        /* ============ GUIDE ============ */
+        .guide-slide {
+            background: linear-gradient(135deg, var(--ink) 0%, #0f1a19 100%);
+            color: #fff;
+            padding: 0;
+        }
+        .guide-slide::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 85% 15%, rgba(212,162,76,0.15) 0%, transparent 45%),
+                radial-gradient(circle at 15% 85%, rgba(74,139,135,0.15) 0%, transparent 45%);
+        }
+        .guide-slide .section-head {
+            position: relative; z-index: 2;
+            padding: 50px 80px 10px;
+        }
+        .guide-slide .section-label { color: var(--warm-gold); }
+        .guide-slide .section-title { color: #fff; }
+        .guide-slide .section-index { color: var(--warm-gold); }
+        .guide-body {
+            padding: 20px 80px 60px;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        .guide-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(168,197,189,0.2);
+            border-radius: 16px;
+            padding: 22px 24px;
+            backdrop-filter: blur(10px);
+        }
+        .guide-card .gc-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+        .guide-card .gc-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 36px;
+            color: var(--warm-gold);
+            font-weight: 600;
+            line-height: 1;
+        }
+        .guide-card h4 {
+            font-size: 17px;
+            color: #fff;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .guide-card p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+        }
+        .guide-card p b { color: var(--warm-gold); font-weight: 600; }
+
+        /* ============ CLOSING ============ */
+        .closing-slide {
+            background: linear-gradient(135deg, var(--deep-teal) 0%, #1a3c3a 100%);
+            color: #fff;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .closing-slide::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 50% 30%, rgba(232,176,75,0.18) 0%, transparent 50%);
+        }
+        .closing-inner { position: relative; z-index: 2; }
+        .closing-slide .cs-kicker {
+            font-size: 13px;
+            letter-spacing: 6px;
+            color: var(--warm-gold);
+            margin-bottom: 30px;
+        }
+        .closing-slide .cs-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 72px;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+        .closing-slide .cs-sub {
+            font-size: 24px;
+            color: var(--soft-sage);
+            letter-spacing: 4px;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+        .closing-slide .cs-brand {
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: rgba(255,255,255,0.5);
+            padding-top: 30px;
+            border-top: 1px solid rgba(168,197,189,0.3);
+            display: inline-block;
+            min-width: 300px;
+        }
+
+        /* ============ RWD：手機與平板加大手機觸控可讀性 ============ */
+        @media (max-width: 768px) {
+            body { padding: 20px 0; gap: 20px; }
+            .slide-wrapper { width: 95vw; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ Slide 1: Cover ============ -->
+    <div class="slide-wrapper">
+    <div class="slide-container cover-slide">
+        <div class="cover-left">
+            <div class="cover-eyebrow">SOCIAL · MEDIA · PLANNING</div>
+            <h1>六月<span class="title-accent">·</span><br>賽季備戰<br><span class="title-accent">Race·Ready</span></h1>
+            <p class="cover-subtitle">端午龍舟、夏日賽季全面開跑——<br>一場精準調校，把訓練累積的雜訊清空，<br>讓身體在賽道上跑得更穩、更遠。</p>
+            <div class="cover-meta">
+                <div class="cover-meta-item">
+                    <div class="label">MONTH</div>
+                    <div class="value">2026 . 06</div>
+                </div>
+                <div class="cover-meta-item">
+                    <div class="label">FREQUENCY</div>
+                    <div class="value">每週 1 則</div>
+                </div>
+                <div class="cover-meta-item">
+                    <div class="label">POSTS</div>
+                    <div class="value">共 5 篇</div>
+                </div>
+            </div>
+        </div>
+        <div class="cover-right">
+            <div class="cover-droplet">
+                <div class="droplet-num">06</div>
+                <div class="droplet-label">J U N E · 2 0 2 6</div>
+            </div>
+        </div>
+        <div class="cover-brand">永和三二 · YONGHE32 · 運動按摩會館</div>
+    </div>
+    </div>
+
+    <!-- ============ Slide 2: Time Planning ============ -->
+    <div class="slide-wrapper">
+    <div class="slide-container time-slide">
+        <div class="section-head">
+            <div class="section-index">01</div>
+            <div>
+                <div class="section-label">T I M E · P L A N N I N G</div>
+                <div class="section-title">發文頻率與時段規劃</div>
+            </div>
+        </div>
+        <div class="time-body">
+            <div class="time-card">
+                <div class="icon-wrap">🗓️</div>
+                <h3>P O S T · R H Y T H M</h3>
+                <div class="big-text">每週 1 則貼文</div>
+                <p class="detail">六月共規劃 <b>5 篇主題貼文</b>，端午連假（6/19–6/21）為全月行銷核心，揪團備賽話題集中於 Week 3 推出，搭配賽季備戰節奏穩定釋出。</p>
+                <div class="pill-row">
+                    <span class="pill">主題貼文 x5</span>
+                    <span class="pill gold">端午檔期 W3</span>
+                </div>
+            </div>
+            <div class="time-card">
+                <div class="icon-wrap">⏰</div>
+                <h3>B E S T · T I M I N G</h3>
+                <div class="big-text">週一 ～ 週四</div>
+                <p class="detail">平日午休與下班前後為跑友、上班族滑動社群的高峰時段；週日晚間亦可加碼觸及備賽族群。</p>
+                <div class="pill-row">
+                    <span class="pill gold">12:00 - 13:00</span>
+                    <span class="pill gold">18:00 - 19:30</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ============ Slide 3: Topics Overview ============ -->
+    <div class="slide-wrapper">
+    <div class="slide-container topics-slide">
+        <div class="section-head">
+            <div class="section-index">02</div>
+            <div>
+                <div class="section-label">M O N T H L Y · T H E M E</div>
+                <div class="section-title">主題脈絡：賽季備戰・身體校準</div>
+            </div>
+        </div>
+        <p class="topics-intro">六月正式進入夏日賽季——端午龍舟、夏季路跑、鐵人三項陸續登場，身體也跟著進入高耗能模式。本月圍繞<strong>備賽校準・賽後重啟</strong>為主軸，從賽季開跑、訓練瓶頸、揪團合購、賽後恢復、長線保養五個角度，引導讀者把「保養」當作備賽計畫的一環。</p>
+        <div class="topics-grid">
+            <div class="topic-block">
+                <div class="topic-week">W E E K · 0 1</div>
+                <div class="topic-emoji">🚣</div>
+                <div class="topic-name">揭開賽季<br>Kickoff</div>
+                <span class="topic-tag">＃賽季備戰</span>
+            </div>
+            <div class="topic-block">
+                <div class="topic-week">W E E K · 0 2</div>
+                <div class="topic-emoji">🏃</div>
+                <div class="topic-name">訓練雜訊<br>Refine</div>
+                <span class="topic-tag">＃訓練瓶頸</span>
+            </div>
+            <div class="topic-block">
+                <div class="topic-week">W E E K · 0 3</div>
+                <div class="topic-emoji">🏆</div>
+                <div class="topic-name">揪團備賽<br>Squad</div>
+                <span class="topic-tag">＃端午合購</span>
+            </div>
+            <div class="topic-block">
+                <div class="topic-week">W E E K · 0 4 – 0 5</div>
+                <div class="topic-emoji">💪</div>
+                <div class="topic-name">賽後重啟<br>Recover</div>
+                <span class="topic-tag">＃DOMS維持</span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ============ Slide 4: Week 1 ============ -->
+    <div class="slide-wrapper">
+    <div class="slide-container week-slide">
+        <div class="week-left">
+            <div class="week-visual">
+                <div class="week-visual-label">W E E K · 0 1 &nbsp;/&nbsp; J U N E</div>
+                <div class="week-visual-icon">🚣</div>
+                <div class="week-visual-big">
+                    <div class="en">Kickoff the race season</div>
+                    <div class="cn">揭開<br>賽季序幕</div>
+                </div>
+            </div>
+        </div>
+        <div class="week-right">
+            <span class="week-badge">WEEK 01 &nbsp;·&nbsp; 6/1 – 6/7</span>
+            <div class="week-eyebrow">主 題 核 心</div>
+            <h2>六月開跑，你的身體準備好了嗎？</h2>
+            <div class="quote">賽季的起點不在鳴槍那一刻，<br>而是你決定保養的當下。</div>
+            <p class="body-text">切入點從「夏日賽事報名表已經塞滿行事曆」的情境開始，提醒跑友：訓練量提升前，先讓身體做一次基礎校準。用「賽季備戰」作為全月開場，自然帶出新朋友見面禮的首次體驗價（運動調理 $1,400／全身基礎 $1,200）。</p>
+            <div class="week-keywords">
+                <span class="keyword">＃賽季備戰</span>
+                <span class="keyword">＃身體校準</span>
+                <span class="keyword">＃首次體驗</span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ============ Slide 5: Week 2 ============ -->
+    <div class="slide-wrapper">
+    <div class="slide-container week-slide">
+        <div class="week-left">
+            <div class="week-visual">
+                <div class="week-visual-label">W E E K · 0 2 &nbsp;/&nbsp; J U N E</div>
+                <div class="week-visual-icon">🏃</div>
+                <div class="week-visual-big">
+                    <div class="en">Tune out the noise</div>
+                    <div class="cn">撥開<br>訓練雜訊</div>
+                </div>
+            </div>
+        </div>
+        <div class="week-right">
+            <span class="week-badge">WEEK 02 &nbsp;·&nbsp; 6/8 – 6/14</span>
+            <div class="week-eyebrow">主 題 核 心</div>
+            <h2>訓練越多，為什麼速度卻卡住了？</h2>
+            <div class="quote">不是你不夠努力，<br>是身體裡的雜訊還沒被清掉。</div>
+            <p class="body-text">針對備賽期高強度訓練的族群，描繪「明明有練但成績停滯」的訓練瓶頸感。用「撥開雜訊、重整動力傳遞」的意象，呼應運動調理按摩的精準切入點，溫和帶入金牌套券（3+1 堂）作為持續維持身體狀態的選項。</p>
+            <div class="week-keywords">
+                <span class="keyword">＃訓練瓶頸</span>
+                <span class="keyword">＃精準校準</span>
+                <span class="keyword">＃金牌套券</span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ============ Slide 6: Week 3 (端午檔期主推) ============ -->
+    <div class="slide-wrapper">
+    <div class="slide-container week-slide">
+        <div class="week-left">
+            <div class="week-visual">
+                <div class="week-visual-label">W E E K · 0 3 &nbsp;/&nbsp; J U N E</div>
+                <div class="week-visual-icon">🏆</div>
+                <div class="week-visual-big">
+                    <div class="en">Race together, win together</div>
+                    <div class="cn">揪團<br>備賽合購</div>
+                </div>
+            </div>
+        </div>
+        <div class="week-right">
+            <span class="week-badge">WEEK 03 &nbsp;·&nbsp; 6/15 – 6/21</span>
+            <div class="week-eyebrow">主 題 核 心</div>
+            <h2>一個人練很拚，一群人練更穩。</h2>
+            <div class="quote">端午前合購 10 堂，<br>讓整支隊伍一起站穩龍船的起點。</div>
+            <p class="body-text">端午連假主打<b>揪團備賽</b>——90 分鐘運動調理券 10 堂 NT$21,000、效期長達 18 個月、不限本人，是龍舟隊／跑團最划算的合購選項。端午期間註冊再送 $100 註冊金。用「隊友一起調校、一起站上起點」的畫面，強化合購的情感連結。</p>
+            <div class="week-keywords">
+                <span class="keyword">＃端午合購</span>
+                <span class="keyword">＃揪團備賽</span>
+                <span class="keyword">＃龍船護航</span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ============ Slide 7: Week 4 ============ -->
+    <div class="slide-wrapper">
+    <div class="slide-container week-slide">
+        <div class="week-left">
+            <div class="week-visual">
+                <div class="week-visual-label">W E E K · 0 4 &nbsp;/&nbsp; J U N E</div>
+                <div class="week-visual-icon">💪</div>
+                <div class="week-visual-big">
+                    <div class="en">Reset after the finish line</div>
+                    <div class="cn">賽後<br>重啟身體</div>
+                </div>
+            </div>
+        </div>
+        <div class="week-right">
+            <span class="week-badge">WEEK 04 &nbsp;·&nbsp; 6/22 – 6/28</span>
+            <div class="week-eyebrow">主 題 核 心</div>
+            <h2>衝過終點之後，身體才真的開始說話。</h2>
+            <div class="quote">DOMS 來敲門時，<br>是身體請你坐下來好好聊聊。</div>
+            <p class="body-text">端午賽事剛落幕，鎖定「賽後三天身體最沈」的時機點。用「<b>金牌運動員維持（DOMS）</b>」套券（3+1 堂，60 分 NT$6,000／90 分 NT$8,400，限期兩個月）切入：頂尖選手的回神節奏，就是賽後立刻啟動調理計畫，避免疲勞累積到下一場。</p>
+            <div class="week-keywords">
+                <span class="keyword">＃賽後重啟</span>
+                <span class="keyword">＃DOMS維持</span>
+                <span class="keyword">＃金牌套券</span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ============ Slide 8: Week 5 ============ -->
+    <div class="slide-wrapper">
+    <div class="slide-container week-slide">
+        <div class="week-left">
+            <div class="week-visual">
+                <div class="week-visual-label">W E E K · 0 5 &nbsp;/&nbsp; J U N E</div>
+                <div class="week-visual-icon">🌞</div>
+                <div class="week-visual-big">
+                    <div class="en">Carry the rhythm into July</div>
+                    <div class="cn">把節奏<br>帶進七月</div>
+                </div>
+            </div>
+        </div>
+        <div class="week-right">
+            <span class="week-badge">WEEK 05 &nbsp;·&nbsp; 6/29 – 6/30</span>
+            <div class="week-eyebrow">主 題 核 心</div>
+            <h2>賽季不是只跑一場，而是一整個夏天。</h2>
+            <div class="quote">真正的選手，<br>把身體保養排進訓練表裡。</div>
+            <p class="body-text">月末總結：把六月的備戰、合購、賽後恢復收斂為「長線保養觀念」。提醒會員七月炎熱訓練即將進入高峰，現在啟動的調理節奏，才是接下來夏季表現的底氣。導引讀者把套券、新朋友體驗排進七月的訓練計畫。</p>
+            <div class="week-keywords">
+                <span class="keyword">＃長線保養</span>
+                <span class="keyword">＃夏季備戰</span>
+                <span class="keyword">＃職人手感</span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ============ Slide 9: Calendar ============ -->
+    <div class="slide-wrapper">
+    <div class="slide-container calendar-slide">
+        <div class="cal-top">
+            <div class="cal-top-left">
+                <div class="cal-kicker">0 3 &nbsp;·&nbsp; S C H E D U L E</div>
+                <h2>June · 2026</h2>
+            </div>
+            <div class="cal-top-right">
+                <div style="font-size:13px; color:#5a6b69; letter-spacing:2px;">六月排程規劃</div>
+                <div class="cal-legend">
+                    <span class="legend-item"><span class="legend-dot dot-teal"></span>主題貼文</span>
+                    <span class="legend-item"><span class="legend-dot dot-gold"></span>節慶檔期</span>
+                    <span class="legend-item"><span class="legend-dot dot-red"></span>國定假日</span>
+                </div>
+            </div>
+        </div>
+        <div class="cal-grid">
+            <div class="dow">SUN</div><div class="dow">MON</div><div class="dow">TUE</div><div class="dow">WED</div><div class="dow">THU</div><div class="dow">FRI</div><div class="dow">SAT</div>
+
+            <!-- Week 1: June 1 (Mon) start -->
+            <div class="day-cell empty"></div>
+            <div class="day-cell post-day"><span class="day-num">1</span><span class="day-note">揭開賽季</span><span class="day-post-tag">POST 01</span></div>
+            <div class="day-cell"><span class="day-num">2</span></div>
+            <div class="day-cell"><span class="day-num">3</span></div>
+            <div class="day-cell"><span class="day-num">4</span></div>
+            <div class="day-cell"><span class="day-num">5</span></div>
+            <div class="day-cell weekend"><span class="day-num">6</span></div>
+
+            <div class="day-cell weekend"><span class="day-num">7</span></div>
+            <div class="day-cell post-day"><span class="day-num">8</span><span class="day-note">訓練雜訊</span><span class="day-post-tag">POST 02</span></div>
+            <div class="day-cell"><span class="day-num">9</span></div>
+            <div class="day-cell"><span class="day-num">10</span></div>
+            <div class="day-cell"><span class="day-num">11</span></div>
+            <div class="day-cell"><span class="day-num">12</span></div>
+            <div class="day-cell weekend"><span class="day-num">13</span></div>
+
+            <div class="day-cell weekend"><span class="day-num">14</span></div>
+            <div class="day-cell post-day"><span class="day-num">15</span><span class="day-note">揪團備賽</span><span class="day-post-tag">POST 03</span></div>
+            <div class="day-cell"><span class="day-num">16</span></div>
+            <div class="day-cell"><span class="day-num">17</span></div>
+            <div class="day-cell"><span class="day-num">18</span></div>
+            <div class="day-cell holiday"><span class="day-num">19</span><span class="day-note red">端午節</span></div>
+            <div class="day-cell holiday"><span class="day-num">20</span><span class="day-note red">端午連假</span></div>
+
+            <div class="day-cell holiday"><span class="day-num">21</span><span class="day-note red">端午連假</span></div>
+            <div class="day-cell post-day"><span class="day-num">22</span><span class="day-note">賽後重啟</span><span class="day-post-tag">POST 04</span></div>
+            <div class="day-cell"><span class="day-num">23</span></div>
+            <div class="day-cell"><span class="day-num">24</span></div>
+            <div class="day-cell"><span class="day-num">25</span></div>
+            <div class="day-cell"><span class="day-num">26</span></div>
+            <div class="day-cell weekend"><span class="day-num">27</span></div>
+
+            <div class="day-cell weekend"><span class="day-num">28</span></div>
+            <div class="day-cell post-day"><span class="day-num">29</span><span class="day-note">長線保養</span><span class="day-post-tag">POST 05</span></div>
+            <div class="day-cell"><span class="day-num">30</span></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+            <div class="day-cell empty"></div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ============ Slide 10: Guide ============ -->
+    <div class="slide-wrapper">
+    <div class="slide-container guide-slide">
+        <div class="section-head">
+            <div class="section-index">04</div>
+            <div>
+                <div class="section-label">W R I T I N G · G U I D E</div>
+                <div class="section-title">6 月 文 案 撰 寫 重 點</div>
+            </div>
+        </div>
+        <div class="guide-body">
+            <div class="guide-card">
+                <div class="gc-head">
+                    <div class="gc-num">01</div>
+                    <h4>從「賽季體感」切入</h4>
+                </div>
+                <p>六月是<b>夏日賽季開跑月</b>，用「報名表已經滿了」「練到瓶頸」「賽後爬不起來」等<b>訓練共感</b>開場，比直接談服務更能打中跑友、鐵人受眾。</p>
+            </div>
+            <div class="guide-card">
+                <div class="gc-head">
+                    <div class="gc-num">02</div>
+                    <h4>端午 · 用「揪團」敘事</h4>
+                </div>
+                <p>跳脫「端午粽子優惠」的紅海，改切<b>「龍船隊友、跑團一起調校」</b>，把合購翻譯成「為彼此的賽道把關」的情感連結。</p>
+            </div>
+            <div class="guide-card">
+                <div class="gc-head">
+                    <div class="gc-num">03</div>
+                    <h4>意象詞彙 · 升級</h4>
+                </div>
+                <p>本月主推字彙：<b>校準、撥開雜訊、動力傳遞、餘裕、重啟、節奏</b>。避免再用五月的「清空、流動、沈降」等濕氣詞，保持品牌語彙<b>月月有新鮮感</b>。</p>
+            </div>
+            <div class="guide-card">
+                <div class="gc-head">
+                    <div class="gc-num">04</div>
+                    <h4>Week 3 · 合購條件標示</h4>
+                </div>
+                <p>揪團合購券（10 堂 90 分 NT$21,000）要清楚標註<b>效期 18 個月、不限本人、端午註冊送 $100</b>三大亮點；Week 4 金牌套券標<b>限期兩個月、不更正</b>使用條件。</p>
+            </div>
+            <div class="guide-card">
+                <div class="gc-head">
+                    <div class="gc-num">05</div>
+                    <h4>避詞守則 · 持續執行</h4>
+                </div>
+                <p>不用「痠痛、治療、沾黏、復健、損傷、發炎」。改說：<b>緊繃鎖住、訓練瓶頸、軟組織緊繃、清空雜訊、撥開沈重、重啟流動</b>。</p>
+            </div>
+            <div class="guide-card">
+                <div class="gc-head">
+                    <div class="gc-num">06</div>
+                    <h4>本月主打活動</h4>
+                </div>
+                <p>① 新朋友見面禮（運動 $1,400／基礎 $1,200）<br>② 金牌運動員 DOMS 維持 3+1 堂<br>③ <b>端午合購金牌戰</b>（10 堂 NT$21,000、註冊送 $100）</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ============ Slide 11: Closing ============ -->
+    <div class="slide-wrapper">
+    <div class="slide-container closing-slide">
+        <div class="closing-inner">
+            <div class="cs-kicker">J U N E &nbsp;·&nbsp; 2 0 2 6</div>
+            <div class="cs-main">Train hard,<br>recover smarter.</div>
+            <div class="cs-sub">賽 季 備 戰 &nbsp;·&nbsp; 身 體 校 準</div>
+            <div class="cs-brand">YONGHE 32 &nbsp;·&nbsp; 永 和 三 二</div>
+        </div>
+    </div>
+    </div>
+
+</body>
+</html>
